@@ -1,15 +1,15 @@
 //
-//  mapchatTests.swift
-//  mapchatTests
+//  calculateTests.swift
+//  calculateTests
 //
-//  Created by Nabil Rahman on 9/9/19.
+//  Created by Nabil Rahman on 9/16/19.
 //  Copyright © 2019 Nabil Rahman. All rights reserved.
 //
 
 import XCTest
-@testable import mapchat
+@testable import calculate
 
-class mapchatTests: XCTestCase {
+class calculateTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
