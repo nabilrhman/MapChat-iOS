@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  calculate
+//  mapchat
 //
-//  Created by Nabil Rahman on 9/16/19.
+//  Created by Nabil Rahman on 9/9/19.
 //  Copyright © 2019 Nabil Rahman. All rights reserved.
 //
 
