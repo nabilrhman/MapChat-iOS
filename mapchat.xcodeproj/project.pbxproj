@@ -16,6 +16,9 @@
 		9F14085E2399E3E9003CAC12 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14085D2399E3E9003CAC12 /* WelcomeViewController.swift */; };
 		9F140860239C4D26003CAC12 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9F14085F239C4D26003CAC12 /* GoogleService-Info.plist */; };
 		9F140862239C5235003CAC12 /* FUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F140861239C5235003CAC12 /* FUser.swift */; };
+		9F140866239C53D1003CAC12 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F140865239C53D1003CAC12 /* Constants.swift */; };
+		9F140868239C54F1003CAC12 /* FCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F140867239C54F1003CAC12 /* FCollectionReference.swift */; };
+		9F14086A239C55D9003CAC12 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F140869239C55D9003CAC12 /* HelperFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		9F14085D2399E3E9003CAC12 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		9F14085F239C4D26003CAC12 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9F140861239C5235003CAC12 /* FUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FUser.swift; sourceTree = "<group>"; };
+		9F140865239C53D1003CAC12 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9F140867239C54F1003CAC12 /* FCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCollectionReference.swift; sourceTree = "<group>"; };
+		9F140869239C55D9003CAC12 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,12 +84,15 @@
 				9F1408492399E1C4003CAC12 /* AppDelegate.swift */,
 				9F14085D2399E3E9003CAC12 /* WelcomeViewController.swift */,
 				9F140861239C5235003CAC12 /* FUser.swift */,
+				9F140869239C55D9003CAC12 /* HelperFunctions.swift */,
+				9F140867239C54F1003CAC12 /* FCollectionReference.swift */,
 				9F14084B2399E1C4003CAC12 /* SceneDelegate.swift */,
 				9F14084F2399E1C4003CAC12 /* Main.storyboard */,
 				9F1408522399E1CA003CAC12 /* Assets.xcassets */,
 				9F1408542399E1CA003CAC12 /* LaunchScreen.storyboard */,
 				9F1408572399E1CA003CAC12 /* Info.plist */,
 				9F14085F239C4D26003CAC12 /* GoogleService-Info.plist */,
+				9F140865239C53D1003CAC12 /* Constants.swift */,
 			);
 			path = mapchat;
 			sourceTree = "<group>";
@@ -213,10 +222,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F14086A239C55D9003CAC12 /* HelperFunctions.swift in Sources */,
+				9F140866239C53D1003CAC12 /* Constants.swift in Sources */,
 				9F14085E2399E3E9003CAC12 /* WelcomeViewController.swift in Sources */,
 				9F14084A2399E1C4003CAC12 /* AppDelegate.swift in Sources */,
 				9F14084C2399E1C4003CAC12 /* SceneDelegate.swift in Sources */,
 				9F140862239C5235003CAC12 /* FUser.swift in Sources */,
+				9F140868239C54F1003CAC12 /* FCollectionReference.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

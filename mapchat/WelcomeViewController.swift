@@ -26,6 +26,7 @@ class WelcomeViewController: UIViewController {
 
     @IBAction func loginButtonPressed(_ sender: Any) {
         dismissKeyboard()
+        
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {
