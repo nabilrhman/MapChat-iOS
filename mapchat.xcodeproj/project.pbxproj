@@ -24,6 +24,7 @@
 		9F140872239C99AF003CAC12 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F140871239C99AF003CAC12 /* UserTableViewCell.swift */; };
 		9F140875239C9DE3003CAC12 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F140874239C9DE3003CAC12 /* UsersTableViewController.swift */; };
 		9F140877239CD396003CAC12 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F140876239CD396003CAC12 /* ChatsViewController.swift */; };
+		9F140879239D0275003CAC12 /* ProfileViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F140878239D0275003CAC12 /* ProfileViewTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		9F140871239C99AF003CAC12 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		9F140874239C9DE3003CAC12 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		9F140876239CD396003CAC12 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
+		9F140878239D0275003CAC12 /* ProfileViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				9F14086B239C65AD003CAC12 /* FinishRegistrationViewController.swift */,
 				9F14086F239C8891003CAC12 /* SettingsTableViewController.swift */,
 				9F140876239CD396003CAC12 /* ChatsViewController.swift */,
+				9F140878239D0275003CAC12 /* ProfileViewTableViewController.swift */,
 				9F140874239C9DE3003CAC12 /* UsersTableViewController.swift */,
 				9F140869239C55D9003CAC12 /* HelperFunctions.swift */,
 				9F140867239C54F1003CAC12 /* FCollectionReference.swift */,
@@ -248,6 +251,7 @@
 				9F140862239C5235003CAC12 /* FUser.swift in Sources */,
 				9F140868239C54F1003CAC12 /* FCollectionReference.swift in Sources */,
 				9F140877239CD396003CAC12 /* ChatsViewController.swift in Sources */,
+				9F140879239D0275003CAC12 /* ProfileViewTableViewController.swift in Sources */,
 				9F140870239C8891003CAC12 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
