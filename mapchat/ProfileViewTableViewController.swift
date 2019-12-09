@@ -17,6 +17,7 @@ class ProfileViewTableViewController: UITableViewController {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var blockButtonOutlet: UIButton!
     
+    
     var user: FUser?
     
     override func viewDidLoad() {
@@ -38,8 +39,25 @@ class ProfileViewTableViewController: UITableViewController {
     }
     
     @IBAction func blockUserButtonPressed(_ sender: Any) {
-        
+        var currentBlockedIds = FUser.currentUser()!.blockedUsers
+           if currentBlockedIds.contains(user!.objectId)
+           {
+               currentBlockedIds.remove(at: currentBlockedIds.index(of: user!.objectId)!)
+           }
+           else
+           {
+               currentBlockedIds.append(user!.objectId)
+           }
+           
+           updateCurrentUserInFirestore(withValues: [kBLOCKEDUSERID : currentBlockedIds]) { (error) in
+               if error != nil {
+                   print("Error updating user \(error!.localizedDescription)")
+                   return
+               }
+               self.updateBlockStatus()
+           }
     }
+    
     
     @IBAction func chatButtonPressed(_ sender: Any) {
         
