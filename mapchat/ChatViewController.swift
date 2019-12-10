@@ -15,7 +15,7 @@ import AVFoundation
 import AVKit
 import FirebaseFirestore
 
-class ChatViewController: JSQMessagesViewController {
+class ChatViewController: JSQMessagesViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var chatRoomId: String!
     var memberIds: [String]!
@@ -134,6 +134,28 @@ class ChatViewController: JSQMessagesViewController {
             
             outgoingMessage = OutgoingMessage(message: text, senderId: currentUser.objectId, senderName: currentUser.firstname, date: date, status: kDELIVERED, type: kTEXT)
         }
+        
+        //picture message
+        if let pic = picture {
+            
+            uploadImage(image: pic, chatRoomId: chatRoomId, view: self.navigationController!.view) { (imageLink) in
+                
+                if imageLink != nil {
+                    
+                    let text = kPICTURE
+                    
+                    outgoingMessage = OutgoingMessage(message: text, pictureLink: imageLink!, senderId: currentUser.objectId, senderName: currentUser.firstname, date: date, status: kDELIVERED, type: kPICTURE)
+                    
+                    JSQSystemSoundPlayer.jsq_playMessageSentSound()
+                    self.finishSendingMessage()
+                    
+                    outgoingMessage?.sendMessage(chatRoomID: self.chatRoomId, messageDictionary: outgoingMessage!.messageDictionary, memberIds: self.memberIds, membersToPush: self.membersToPush)
+                }
+
+            }
+            return
+        }
+        
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         self.finishSendingMessage()
         outgoingMessage!.sendMessage(chatRoomID: chatRoomId, messageDictionary: outgoingMessage!.messageDictionary, memberIds: memberIds, membersToPush: membersToPush)
@@ -337,7 +359,7 @@ class ChatViewController: JSQMessagesViewController {
     @objc func showGroup() {
          
 //         let groupVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "groupView") as! GroupViewController
-//         
+//
 //         groupVC.group = group!
 //         self.navigationController?.pushViewController(groupVC, animated: true)
      }
@@ -468,7 +490,7 @@ class ChatViewController: JSQMessagesViewController {
     //MARK: JSQMessages Delegate functions
     
     override func didPressAccessoryButton(_ sender: UIButton!) {
-        //        let camera = Camera(delegate_: self)
+        let camera = Camera(delegate_: self)
         
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -478,8 +500,7 @@ class ChatViewController: JSQMessagesViewController {
         }
         
         let sharePhoto = UIAlertAction(title: "Photo Library", style: .default) { (action) in
-            print("Photo Library")
-            //            camera.PresentPhotoLibrary(target: self, canEdit: false)
+            camera.PresentPhotoLibrary(target: self, canEdit: false)
         }
         
         
@@ -500,10 +521,10 @@ class ChatViewController: JSQMessagesViewController {
             
         }
         
-        takePhotoOrVideo.setValue(UIImage(named: "camera"), forKey: "image")
-        sharePhoto.setValue(UIImage(named: "picture"), forKey: "image")
-        shareVideo.setValue(UIImage(named: "video"), forKey: "image")
-        shareLocation.setValue(UIImage(named: "location"), forKey: "image")
+        takePhotoOrVideo.setValue(UIImage(named: "Camera photo"), forKey: "image")
+        sharePhoto.setValue(UIImage(named: "Picture"), forKey: "image")
+        shareVideo.setValue(UIImage(named: "Video"), forKey: "image")
+        shareLocation.setValue(UIImage(named: "Location"), forKey: "image")
         
         
         optionMenu.addAction(takePhotoOrVideo)
@@ -627,6 +648,18 @@ class ChatViewController: JSQMessagesViewController {
         
         avatarButton.addTarget(self, action: #selector(self.showUserProfile), for: .touchUpInside)
     }
+    
+    //MARK: UIImagePickerController delegate
+       
+       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+           
+           let video = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL
+           let picture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+           
+           sendMessage(text: nil, date: Date(), picture: picture, location: nil, video: video, audio: nil)
+           
+           picker.dismiss(animated: true, completion: nil)
+       }
     
     //MARK: Helper functions
     
